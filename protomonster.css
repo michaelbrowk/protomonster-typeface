@@ -1,0 +1,17 @@
+@font-face {
+  font-family: 'Protomonster';
+  src: url('./Protomonster-Variable.woff2') format('woff2');
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+}
+
+.protomonster {
+  font-family: 'Protomonster', sans-serif;
+  font-weight: 500;
+  font-synthesis: none;
+}
+
+.protomonster-monster {
+  font-feature-settings: 'ss01' 1;
+}

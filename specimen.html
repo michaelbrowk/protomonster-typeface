@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Protomonster — Family 1.200</title>
+  <style>
+    @font-face{font-family:Protomonster;src:url('./Protomonster-Variable.woff2') format('woff2');font-style:normal;font-weight:400 700;font-display:swap}
+    @font-face{font-family:'Protomonster Static';src:url('./Protomonster-Regular.woff2') format('woff2');font-style:normal;font-weight:400;font-display:swap}
+    @font-face{font-family:'Protomonster Static';src:url('./Protomonster-Medium.woff2') format('woff2');font-style:normal;font-weight:500;font-display:swap}
+    @font-face{font-family:'Protomonster Static';src:url('./Protomonster-Bold.woff2') format('woff2');font-style:normal;font-weight:700;font-display:swap}
+    :root{color-scheme:light;--paper:#f5f4ed;--ink:#11130d;--muted:#62645b;--line:#d4d5ca;--accent:#b2ef23;--panel:#eceee3;--selected-weight:500}
+    *{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);font:14px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;transition:background .18s,color .18s}
+    body.dark{color-scheme:dark;--paper:#12140e;--ink:#f5f4ed;--muted:#a6aa9b;--line:#383c30;--panel:#1c2017}
+    main{width:min(1120px,100% - 72px);margin:auto}header{display:flex;justify-content:space-between;gap:16px;padding:27px 0 20px;border-bottom:1px solid var(--line);font-size:12px;letter-spacing:.035em}
+    .tag{display:flex;align-items:center;gap:9px}.dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}.meta{color:var(--muted)}
+    .font{font-family:Protomonster,sans-serif;font-weight:var(--selected-weight);font-style:normal;font-synthesis:none;font-kerning:normal}
+    .hero{padding:63px 0 43px}.hero h1{font-size:clamp(38px,12.7vw,152px);font-weight:var(--selected-weight);line-height:1.28;letter-spacing:-.015em;margin:0;white-space:nowrap}.hero-bottom{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-top:25px}.hero p{max-width:480px;color:var(--muted);margin:0;font-size:15px;line-height:1.6}.downloads{display:flex;gap:7px;flex-wrap:wrap;flex-shrink:0}
+    a{color:inherit;text-decoration:none}.file{display:inline-flex;align-items:center;padding:9px 13px;border:1px solid var(--line);border-radius:5px;font-size:12px;font-weight:600}.file:hover{border-color:var(--ink)}.file.primary{background:var(--accent);color:#11130d;border-color:var(--accent)}
+    section{border-top:1px solid var(--line);padding:29px 0 35px}.section-heading{display:flex;justify-content:space-between;gap:20px;align-items:baseline;margin-bottom:21px}h2{font-size:12px;line-height:1.4;font-weight:600;letter-spacing:.08em;text-transform:uppercase;margin:0}.section-note{font-size:12px;color:var(--muted)}
+    .toolbar{display:flex;align-items:end;gap:22px;flex-wrap:wrap;padding:16px 18px;background:var(--panel);border-radius:7px}.range-control{min-width:145px;flex:1;max-width:230px}.control-label{display:flex;justify-content:space-between;gap:12px;color:var(--muted);font-size:11px;margin-bottom:9px}.control-label output{color:var(--ink);font-variant-numeric:tabular-nums}.checks{display:flex;gap:17px;align-items:center;flex-wrap:wrap;align-self:center}.check{display:flex;align-items:center;gap:6px;font-size:12px;cursor:pointer;white-space:nowrap}input[type=checkbox]{accent-color:#566622;width:14px;height:14px;margin:0}input[type=range]{width:100%;display:block;accent-color:#566622;height:17px;margin:0;cursor:pointer}
+    button{font:inherit;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:5px;padding:7px 11px;font-size:12px;line-height:1.5}button:hover{border-color:var(--ink)}button:focus-visible,a:focus-visible{outline:2px solid var(--ink);outline-offset:3px}.preset-buttons{display:flex;gap:6px;margin-left:auto}.editor{font-size:96px;letter-spacing:0;line-height:1.65;padding:29px 4px 26px;min-height:240px;overflow-wrap:anywhere;white-space:pre-wrap;outline:none}.editor:focus{box-shadow:inset 0 -2px var(--accent)}.editor[contenteditable=true]:empty:before{content:attr(data-placeholder);color:var(--muted)}.editor-help{color:var(--muted);font-size:11px;display:flex;gap:12px;justify-content:space-between}
+    .alphabet-grid{display:grid;grid-template-columns:1fr 1fr;gap:27px 44px}.alphabet-block .label,.sample .label{font-size:11px;color:var(--muted);margin-bottom:10px}.alphabet{font-size:31px;line-height:1.7;overflow-wrap:anywhere}.alphabet.cyrillic{font-size:30px}.focus-line{margin-top:24px;padding:21px 0 0;border-top:1px dashed var(--line);display:flex;align-items:baseline;gap:25px;flex-wrap:wrap}.focus-line .label{font-size:11px;color:var(--muted);min-width:114px}.focus-line .font{font-size:48px;line-height:1.6;letter-spacing:.04em;overflow-wrap:anywhere}.symbols{font-size:32px;line-height:1.9;overflow-wrap:anywhere}
+    .samples{display:grid;gap:26px}.sample{overflow-wrap:anywhere}.sample .font{margin:0;line-height:1.5}.sample-96{font-size:96px}.sample-48{font-size:48px}.sample-32{font-size:32px}.install{display:grid;grid-template-columns:1fr 1fr;gap:40px}.install p{color:var(--muted);font-size:13px;line-height:1.75;margin:0}.install strong{color:var(--ink);font-weight:500}.install code{font-size:11px}footer{display:flex;justify-content:space-between;gap:20px;color:var(--muted);font-size:11px;padding:23px 0 35px;border-top:1px solid var(--line)}
+    .weight-control{min-width:230px;flex:1;max-width:300px}.weight-landmarks{display:block;position:relative;height:14px;font-size:9px;color:var(--muted);margin-top:6px}.weight-landmarks span{position:absolute;white-space:nowrap}.weight-landmarks span:first-child{left:0}.weight-landmarks span:nth-child(2){left:33.333%;transform:translateX(-50%)}.weight-landmarks span:last-child{right:0}.static{font-family:'Protomonster Static',sans-serif}.correction-label{margin-top:20px}.correction-96{font-size:96px;line-height:1.55;overflow-wrap:anywhere}.variable-download{display:flex;align-items:center;gap:22px;flex-wrap:wrap;margin-top:25px;font-size:12px}.variable-download strong{font-weight:500}.variable-download a{border-bottom:1px solid var(--line)}.variable-download span{color:var(--muted);font-size:11px}.toolbar{gap:18px}.range-control{min-width:140px;max-width:195px}.checks{gap:13px}.w400{font-weight:400}.w500{font-weight:500}.w700{font-weight:700}.family-comparisons{display:grid;gap:24px}.comparison{display:grid;grid-template-columns:110px 1fr;gap:30px;padding-bottom:25px;border-bottom:1px dashed var(--line)}.comparison:last-child{border-bottom:none;padding-bottom:0}.comparison-label{font-size:12px;padding-top:13px}.comparison-label span{display:block;color:var(--muted);font-size:11px}.comparison-focus{display:inline-block;font-size:.72em;margin-top:8px}.comparison .font{font-size:56px;line-height:1.48;overflow-wrap:anywhere}.round-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.round-grid .label,.round-large .label{font-size:11px;color:var(--muted);margin-bottom:12px}.round-96{font-size:96px;line-height:1.5;white-space:nowrap}.round-large{margin-top:24px;padding-top:25px;border-top:1px dashed var(--line)}.round-160{font-size:160px;line-height:1.5;overflow-wrap:anywhere}.format-links{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:25px}.format-links>div{display:flex;align-items:center;gap:14px;font-size:12px}.format-links strong{font-weight:500;margin-right:auto}.format-links a{font-size:11px;border-bottom:1px solid var(--line)}.format-links a:hover{border-color:var(--ink)}
+    .refinement-line{font-size:48px;line-height:1.65;overflow-wrap:anywhere}.refinement-kern{display:grid;grid-template-columns:1fr 1fr;gap:30px;padding-top:24px;margin-top:20px;border-top:1px dashed var(--line)}.refinement-kern .label{font-size:11px;color:var(--muted);margin-bottom:12px}.refinement-kern .font{font-size:48px;line-height:1.65;overflow-wrap:anywhere}
+    @media(max-width:900px){.hero-bottom{align-items:start;flex-direction:column;gap:20px}.toolbar{align-items:end}.checks{margin-left:auto}.preset-buttons{margin-left:0}.round-grid{grid-template-columns:1fr;gap:18px}.round-grid>div{display:flex;align-items:baseline;gap:30px}.round-grid .label{min-width:140px}.round-96{line-height:1.4}.format-links{gap:20px;grid-template-columns:1fr;max-width:340px}}
+    @media(max-width:700px){main{width:calc(100% - 32px)}header{padding-top:20px;flex-wrap:wrap;gap:5px}.hero{padding-top:41px;padding-bottom:29px}.hero h1{font-size:12.6vw}.hero-bottom{align-items:start;flex-direction:column;gap:19px;margin-top:19px}.hero p{font-size:13px}.section-heading{align-items:start;flex-direction:column;gap:5px;margin-bottom:18px}.toolbar{gap:16px 18px;padding:14px}.range-control{min-width:calc(50% - 12px);max-width:none}.checks{gap:14px;width:100%}.preset-buttons{margin-left:0}.editor{font-size:64px;min-height:230px;line-height:1.65;padding:22px 0}.editor-help{flex-direction:column;gap:3px}.alphabet-grid{grid-template-columns:1fr;gap:22px}.alphabet,.alphabet.cyrillic{font-size:28px}.focus-line{gap:7px}.focus-line .label{width:100%}.focus-line .font{font-size:36px;letter-spacing:0}.symbols{font-size:27px}.sample-96{font-size:clamp(48px,12vw,96px)}.sample-48{font-size:clamp(32px,8vw,48px)}.sample-32{font-size:28px}.install{grid-template-columns:1fr;gap:20px}footer{flex-direction:column;gap:5px}.weight-control{flex:0 0 100%;width:100%;max-width:none;min-width:0}.range-control{min-width:calc(50% - 12px);max-width:none}.checks{margin-left:0}.comparison{grid-template-columns:1fr;gap:9px}.comparison-label{display:flex;gap:10px;align-items:baseline;padding-top:0}.comparison .font{font-size:clamp(34px,8vw,56px)}.round-grid>div{display:block}.round-grid .label{margin-bottom:0}.round-96{font-size:96px}.correction-96{font-size:clamp(56px,14vw,96px)}.round-160{font-size:clamp(96px,24vw,160px)}.format-links{margin-top:20px}}
+    @media(prefers-reduced-motion:reduce){body{transition:none}}
+    @media print{main{width:100%}body{--paper:#fff;--ink:#000;--muted:#555;--line:#ccc;--panel:#eee}.toolbar,.downloads,.editor-help{display:none}.hero{padding:20px 0}.hero h1{font-size:80px}.editor{font-size:70px;min-height:0}.alphabet-grid{break-inside:avoid}section{break-inside:avoid}.sample-96{font-size:70px}}
+  </style>
+</head>
+<body>
+<main>
+  <header><span class="tag"><i class="dot" aria-hidden="true"></i> PROTOMONSTER / TYPE SPECIMEN</span><span class="meta">Variable + 3 начертания · 1.200</span></header>
+  <div class="hero">
+    <h1 class="font">PROTOMONSTER</h1>
+    <div class="hero-bottom"><p>Живой маркерный display-шрифт. Для коротких фраз, громких заголовков и идей с характером.</p><div class="downloads"><a class="file primary" href="https://github.com/michaelbrowk/protomonster-typeface/releases/download/v1.200/Protomonster-Family-1.200-Release.zip" download>Скачать семейство</a><a class="file" href="./Protomonster-Variable.ttf" download>Variable TTF</a><a class="file" href="./Protomonster-Regular.ttf" download>Regular TTF</a><a class="file" href="./Protomonster-Medium.ttf" download>Medium TTF</a><a class="file" href="./Protomonster-Bold.ttf" download>Bold TTF</a></div></div>
+  </div>
+  <section aria-labelledby="try-heading">
+    <div class="section-heading"><h2 id="try-heading">Попробуйте свой текст</h2><span class="section-note" id="font-status" role="status">Загружаем шрифт…</span></div>
+    <div class="toolbar">
+      <label class="weight-control"><span class="control-label">Вес <output id="weight-value" for="weight">500 · Medium</output></span><input id="weight" type="range" min="400" max="700" step="1" value="500" aria-label="Вес шрифта от 400 до 700"><span class="weight-landmarks"><span>400 Regular</span><span>500 Medium</span><span>700 Bold</span></span></label>
+      <label class="range-control"><span class="control-label">Размер <output id="size-value" for="size">96 px</output></span><input id="size" type="range" min="24" max="160" step="1" value="96" aria-label="Размер шрифта"></label>
+      <label class="range-control"><span class="control-label">Межбуквенный интервал <output id="tracking-value" for="tracking">0 em</output></span><input id="tracking" type="range" min="-5" max="15" step="1" value="0" aria-label="Межбуквенный интервал"></label>
+      <div class="checks"><label class="check"><input type="checkbox" id="kern" checked>Кернинг</label><label class="check"><input type="checkbox" id="monster">Глаза M / М</label></div>
+      <div class="preset-buttons"><button type="button" id="preset-ru" aria-label="Пример на русском">RU</button><button type="button" id="preset-en" aria-label="Пример на английском">EN</button><button type="button" id="theme" aria-pressed="false">Тёмный фон</button></div>
+    </div>
+    <div class="font editor" id="editor" contenteditable="true" role="textbox" aria-label="Ваш текст" aria-multiline="true" spellcheck="false" data-placeholder="Напишите что-нибудь">Привет, Монстр!</div>
+    <div class="editor-help"><span>Нажмите на текст и печатайте. Глаза включают стилистический вариант ss01.</span><span>Обычные M и М — по умолчанию.</span></div>
+  </section>
+  <section aria-labelledby="family-heading">
+    <div class="section-heading"><h2 id="family-heading">Три начертания</h2><span class="section-note">Реальные контуры каждого веса · 56 px</span></div>
+    <div class="family-comparisons">
+      <div class="comparison"><span class="comparison-label">Regular <span>400</span></span><div class="font static w400">Hello, monster!<br>Привет, монстр!<br><span class="comparison-focus">Оо а 6789 Ёлка ёж</span></div></div>
+      <div class="comparison"><span class="comparison-label">Medium <span>500</span></span><div class="font static w500">Hello, monster!<br>Привет, монстр!<br><span class="comparison-focus">Оо а 6789 Ёлка ёж</span></div></div>
+      <div class="comparison"><span class="comparison-label">Bold <span>700</span></span><div class="font static w700">Hello, monster!<br>Привет, монстр!<br><span class="comparison-focus">Оо а 6789 Ёлка ёж</span></div></div>
+    </div>
+  </section>
+  <section aria-labelledby="round-heading">
+    <div class="section-heading"><h2 id="round-heading">Овалы и соединения</h2><span class="section-note">O o — латиница · О о — кириллица · a а — обе азбуки</span></div>
+    <div class="round-grid">
+      <div><div class="label">REGULAR / 96 PX</div><div class="font static w400 round-96">o О a а</div></div>
+      <div><div class="label">MEDIUM / 96 PX</div><div class="font static w500 round-96">o О a а</div></div>
+      <div><div class="label">BOLD / 96 PX</div><div class="font static w700 round-96">o О a а</div></div>
+    </div>
+    <div class="round-large"><div class="label">ВЫБРАННОЕ НАЧЕРТАНИЕ / 160 PX</div><div class="font round-160">O o О о a а</div><div class="label correction-label">ЦИФРЫ 6–9 И ПРОПИСНАЯ Ё / ВЫБРАННЫЙ ВЕС</div><div class="font correction-96">Оо а 6789 Ёлка ёж</div></div>
+  </section>
+  <section aria-labelledby="refinement-heading">
+    <div class="section-heading"><h2 id="refinement-heading">Формы и интервалы</h2><span class="section-note">Выбранный вес · латиница и кириллица</span></div>
+    <div class="font refinement-line">A А Á Ä Å / B P R В Б Р Ь Ъ Ы Я в ф я ь ъ ы</div>
+    <div class="font refinement-line">e е ё é / Ø ø Æ æ / 0123456789 / a*b</div>
+    <div class="font refinement-line">i ı ȷ í ì î ï ĭ j́ / Ë Ё Ö ë ё ö Å å Ç ç</div>
+    <div class="refinement-kern"><div><div class="label">КЕРНИНГ ВКЛЮЧЁН</div><div class="font" style="font-kerning:normal;font-feature-settings:'kern' 1">AV ÁV To T́o ji j́i<br>L4 v7 w7 y7 у7</div></div><div><div class="label">КЕРНИНГ ВЫКЛЮЧЕН</div><div class="font" style="font-kerning:none;font-feature-settings:'kern' 0">AV ÁV To T́o ji j́i<br>L4 v7 w7 y7 у7</div></div></div>
+  </section>
+  <section aria-labelledby="marks-heading">
+    <div class="section-heading"><h2 id="marks-heading">Диакритика в двух строках</h2><span class="section-note">Выбранный вес · строка 1.55 em · ascent 1250 / descent 300</span></div>
+    <div class="font refinement-line" style="line-height:1.55">H́́&nbsp; Б̊̊<br>Й́&nbsp; Ё̈</div>
+  </section>
+  <section aria-labelledby="alphabet-heading">
+    <div class="section-heading"><h2 id="alphabet-heading">Алфавиты</h2><span class="section-note">Прописные и настоящие строчные · выбранное начертание</span></div>
+    <div class="alphabet-grid">
+      <div class="alphabet-block"><div class="label">LATIN / UPPERCASE</div><div class="font alphabet" lang="en">ABCDEFGHIJKLMNOPQRSTUVWXYZ</div></div>
+      <div class="alphabet-block"><div class="label">LATIN / LOWERCASE</div><div class="font alphabet" lang="en">abcdefghijklmnopqrstuvwxyz</div></div>
+      <div class="alphabet-block"><div class="label">КИРИЛЛИЦА / ПРОПИСНЫЕ</div><div class="font alphabet cyrillic">АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ</div></div>
+      <div class="alphabet-block"><div class="label">КИРИЛЛИЦА / СТРОЧНЫЕ</div><div class="font alphabet cyrillic">абвгдеёжзийклмнопрстуфхцчшщъыьэюя</div></div>
+    </div>
+    <div class="focus-line"><span class="label">ХАРАКТЕРНЫЕ ФОРМЫ</span><span class="font">ЁЙДЛЖЫЮЯ</span><span class="font">ёйдлжыюя</span></div>
+  </section>
+  <section aria-labelledby="symbols-heading"><div class="section-heading"><h2 id="symbols-heading">Цифры и знаки</h2><span class="section-note">259 Unicode-символов · 261 глиф</span></div><div class="font symbols">0123456789<br>.,:;!?… — – - «» „“ “” ‘’ &quot; ' () [] {} / \<br>@ # № &amp; % + − × ÷ = &lt; &gt; ₽ $ € © ® ™</div></section>
+  <section aria-labelledby="sizes-heading">
+    <div class="section-heading"><h2 id="sizes-heading">В разных размерах</h2><span class="section-note">Лучше всего работает от 32 px</span></div>
+    <div class="samples"><div class="sample"><div class="label">96 PX</div><p class="font sample-96">Маленький монстр.<br>Большие идеи.</p></div><div class="sample"><div class="label">48 PX / LATIN</div><p class="font sample-48" lang="en">Quick brown fox jumps over the lazy dog.</p></div><div class="sample"><div class="label">32 PX / КИРИЛЛИЦА</div><p class="font sample-32">Съешь ещё этих мягких французских булок, да выпей чаю. Ёжик, йога, дизайн — всё по-настоящему.</p></div></div>
+  </section>
+  <section aria-labelledby="install-heading">
+    <div class="section-heading"><h2 id="install-heading">Как использовать</h2><span class="section-note">Variable 400–700 + Regular · Medium · Bold</span></div>
+    <div class="install"><p><strong>На компьютере.</strong> Установите <a href="./Protomonster-Variable.ttf" download>Variable TTF</a> для плавного изменения веса в приложениях с поддержкой variable fonts или три статических Regular / Medium / Bold. Выберите один вариант; одновременная установка variable и статических файлов может создать дубликаты семейства <strong>Protomonster</strong>.</p><p><strong>На сайте.</strong> Подключите <a href="./Protomonster-Variable.woff2" download>Variable WOFF2</a> через <code>@font-face</code> с диапазоном <code>font-weight: 400 700</code>. Ползунок плавно меняет реальные контуры от 400 до 700. Три статических начертания сохранены отдельно; искусственное утолщение отключено.</p></div>
+    <div class="variable-download"><strong>Variable / 400–700</strong><a href="./Protomonster-Variable.ttf" download>TTF для компьютера</a><a href="./Protomonster-Variable.woff2" download>WOFF2 для сайта</a><span>Непрерывный вес · по умолчанию 500</span></div>
+    <div class="format-links" aria-label="Скачать отдельные форматы">
+      <div><strong>Regular</strong><a href="./Protomonster-Regular.ttf" download>TTF</a><a href="./Protomonster-Regular.otf" download>OTF</a><a href="./Protomonster-Regular.woff2" download>WOFF2</a></div>
+      <div><strong>Medium</strong><a href="./Protomonster-Medium.ttf" download>TTF</a><a href="./Protomonster-Medium.otf" download>OTF</a><a href="./Protomonster-Medium.woff2" download>WOFF2</a></div>
+      <div><strong>Bold</strong><a href="./Protomonster-Bold.ttf" download>TTF</a><a href="./Protomonster-Bold.otf" download>OTF</a><a href="./Protomonster-Bold.woff2" download>WOFF2</a></div>
+    </div>
+  </section>
+  <footer><span>Protomonster · Variable + Family 1.200 · Display</span><span>Локальный specimen · без внешних шрифтов и библиотек</span></footer>
+</main>
+<script>
+  const editor=document.getElementById('editor');
+  const weight=document.getElementById('weight');
+  const weightValue=document.getElementById('weight-value');
+  const size=document.getElementById('size');
+  const tracking=document.getElementById('tracking');
+  const kern=document.getElementById('kern');
+  const monster=document.getElementById('monster');
+  const sizeValue=document.getElementById('size-value');
+  const trackingValue=document.getElementById('tracking-value');
+  function update(){document.documentElement.style.setProperty('--selected-weight',weight.value);weightValue.value=weight.value+({400:' · Regular',500:' · Medium',700:' · Bold'}[weight.value]||'');const spacing=Number(tracking.value)/100;editor.style.fontSize=size.value+'px';editor.style.letterSpacing=spacing+'em';editor.style.fontKerning=kern.checked?'normal':'none';editor.style.fontFeatureSettings='"kern" '+(kern.checked?1:0)+', "ss01" '+(monster.checked?1:0);sizeValue.value=size.value+' px';trackingValue.value=spacing+' em';}
+  [size,tracking,kern,monster,weight].forEach(el=>el.addEventListener('input',update));
+  document.getElementById('preset-ru').addEventListener('click',()=>{editor.textContent='Привет, Монстр!\nУ меня есть идея.';editor.lang='ru';});
+  document.getElementById('preset-en').addEventListener('click',()=>{editor.textContent='Hello, Monster!\nMake something wild.';editor.lang='en';});
+  document.getElementById('theme').addEventListener('click',event=>{const dark=document.body.classList.toggle('dark');event.currentTarget.setAttribute('aria-pressed',String(dark));event.currentTarget.textContent=dark?'Светлый фон':'Тёмный фон';});
+  editor.addEventListener('paste',event=>{event.preventDefault();const text=event.clipboardData.getData('text/plain');const selection=getSelection();if(!selection.rangeCount)return;const range=selection.getRangeAt(0);range.deleteContents();const node=document.createTextNode(text);range.insertNode(node);range.setStartAfter(node);range.collapse(true);selection.removeAllRanges();selection.addRange(range);});
+  update();
+  Promise.all([document.fonts.load('500 48px Protomonster','ЁЙДЛЖЫЮЯ'),...[400,500,700].map(w=>document.fonts.load(w+' 48px "Protomonster Static"','ЁЙДЛЖЫЮЯ'))]).then(fonts=>{document.getElementById('font-status').textContent=fonts.every(f=>f.length)?'Variable и 3 начертания загружены':'Не все шрифты загрузились — проверьте WOFF2 рядом с HTML';}).catch(()=>{document.getElementById('font-status').textContent='Не все шрифты загрузились — проверьте WOFF2 рядом с HTML';});
+</script>
+</body>
+</html>
