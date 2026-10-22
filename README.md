@@ -1,12 +1,16 @@
 <p><img src="assets/protomonster-logo.png" alt="Protomonster" width="640"></p>
 
-# Protomonster 1.204
+# Protomonster 1.300
 
-Маркерный display-шрифт для коротких фраз и крупных заголовков. Латиница и кириллица, настоящие строчные буквы, 259 Unicode-символов и 261 глиф.
+Маркерный display-шрифт для коротких фраз и крупных заголовков. Латиница и кириллица, настоящие строчные буквы, 427 Unicode-символов и 430 глифов.
 
-[Скачать комплект 1.204](https://github.com/michaelbrowk/protomonster-typeface/releases/download/v1.204/Protomonster-Family-1.204-Release.zip) · [Интерактивный specimen](specimen.html) · [Превью](preview.png)
+[Скачать комплект 1.300](https://github.com/michaelbrowk/protomonster-typeface/releases/download/v1.300/Protomonster-Family-1.300-Release.zip) · [Интерактивный specimen](specimen.html) · [Превью](preview.png)
 
-[Изменения 1.204 и границы проверки](CHANGELOG.md)
+[Лендинг и полный каталог](https://www.michaelbrowk.com/protomonster)
+
+Расширенная европейская латиница, кириллица с украинскими и белорусскими буквами, стрелки, дроби, верхние и нижние индексы.
+
+[Изменения 1.300 и границы проверки](CHANGELOG.md)
 
 ## Начертания
 

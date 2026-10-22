@@ -1,3 +1,21 @@
+# Protomonster 1.300
+
+22 October 2026. Character-set expansion and marker arrow redesign, incorporating the improved vertical metrics from local 1.205.
+
+- 430 glyphs and 427 Unicode mappings: 169 new glyphs / 168 new encoded characters compared with 1.204.
+- Extended European Latin: additional accented letters, Œœ, Ÿ, ẞ, Ðð, Þþ, Ĳĳ and others.
+- Ukrainian and Belarusian letters Ґґ Єє Іі Її Ўў, plus modifier-letter apostrophe ʼ.
+- Currency and punctuation: £ ¥ ¢ ¡ ¿ ‰ ‹ › ‚ ′ ″ ‑ ¶.
+- Nine original marker-style arrows; ≠ ≤ ≥ ≈ ∞ √; nine fractions and fraction slash; superscript and subscript digits 0–9.
+- Eight combining marks, mark positioning and contextual dotless į for decomposed accents.
+- Vertical metrics align text more naturally in line boxes; outlines of pre-existing letters remain as in the accepted 1.204 drawing.
+
+Variable 400–700, default Medium 500; static Regular 400 / Medium 500 / Bold 700. True lowercase, ordinary M/М and optional eyes through ss01 are retained.
+
+Each new glyph received three independent agent reviews across five weights. The nine redrawn arrows received a separate three-reviewer pass. Release checks verify preservation of the accepted outlines and layout data, dense weight interpolation, normalization and reproducibility. These checks cover display use and the recorded proofs, not every possible language, word or application. Earlier releases remain available in Git history and GitHub Releases.
+
+---
+
 # Protomonster 1.204
 
 Обновление от 21 октября 2026, включает локальные доработки 1.201–1.204.
