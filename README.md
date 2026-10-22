@@ -21,13 +21,13 @@
 | Medium | 500 |
 | Bold | 700 |
 
-В комплекте Variable TTF / WOFF2 и три статических начертания в TTF / OTF / WOFF2.
+В ZIP только Variable TTF / WOFF2, три статических начертания в TTF / OTF / WOFF2 и LICENSE.txt — всего 12 файлов.
 
 ## Установка
 
 Для плавного выбора веса установите [Variable TTF](Protomonster-Variable.ttf), если приложение поддерживает variable fonts. Либо установите три статических TTF: [Regular](Protomonster-Regular.ttf), [Medium](Protomonster-Medium.ttf), [Bold](Protomonster-Bold.ttf). Выберите один вариант установки, чтобы избежать дубликатов семейства.
 
-Для локального просмотра скачайте комплект, распакуйте и откройте `specimen.html`. В нём можно менять текст, вес, размер, интервалы и фон.
+Для проверки своего текста используйте [тестер на сайте](https://www.michaelbrowk.com/protomonster). Локальный `specimen.html`, CSS и превью доступны отдельно в этом репозитории; в компактный ZIP они не входят.
 
 ## На сайте
 
