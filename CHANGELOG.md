@@ -1,3 +1,17 @@
+# Protomonster 1.301
+
+23 October 2026. Refined lowercase r and its accented forms ŕ and ř.
+
+- Lighter shoulder, continuous inner stem-to-shoulder transition and cleaner terminal.
+- Preserved marker character, outer silhouette, advance widths, kerning and accents.
+- The remaining 427 glyphs, coverage, vertical metrics and OpenType layout are unchanged from 1.300.
+
+Three different agents reviewed every affected glyph across seven weights and 32/64/128 px word proofs. The accepted drawing was preserved exactly in this versioned build. Local verification covered all 301 integer weights, 17,199 shaped pair comparisons, normalization and 11 byte-identical rebuilds. These are bounded checks, not a guarantee for every application or text.
+
+Free personal and commercial use under the included Protomonster Free Font License; redistribution of modified font files requires separate permission. The download contains only 11 font files plus LICENSE.txt.
+
+---
+
 # Protomonster 1.300
 
 22 October 2026. Character-set expansion and marker arrow redesign, incorporating the improved vertical metrics from local 1.205.
