@@ -1,3 +1,19 @@
+# Protomonster 1.302
+
+6 November 2026. Local spacing fixes following the typography audit.
+
+- Separated neighboring accents in the expanded Latin and Cyrillic character set, including Ukrainian її and Latvian Tīrs, Vīns and sirdī.
+- Opened the tight Cyrillic ОТ pair and moved the comma and period closer to Cyrillic т.
+- Preserved all 430 glyph outlines, individual advance widths, character coverage, vertical metrics and the existing marker character.
+
+Variable 400–700, default Medium 500; Regular, Medium and Bold.
+
+Verification of the final 1.302 build covers 472 changed pairs at 301 weights (142,072 geometry checks), 187,222 normalization checks, and 46,985 letter pairs in each of three masters with no intersections. All 11 exports rebuild byte-identically. All 430 outlines and individual widths remain unchanged. Native CoreText proofs cover 32/64/128 px and seven variable weights; craft-owner and independent review results are included with the sources. These are bounded checks, not a claim about every application or arbitrary text.
+
+The download contains 11 font files and the unchanged LICENSE.txt. Preview images, CSS and the local interactive specimen are available in the repository.
+
+---
+
 # Protomonster 1.301
 
 23 October 2026. Refined lowercase r and its accented forms ŕ and ř.
